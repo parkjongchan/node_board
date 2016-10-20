@@ -1,5 +1,5 @@
 {
-  "name": "mongoose_tutorial",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "start": "node app.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
