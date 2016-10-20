@@ -1,0 +1,193 @@
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var contentList = branchList;
+
+	contentList = sortByKey(contentList, 'area1');
+	
+
+	var beforearea="";
+
+	$("select[id='area1'] option").remove(); //내역삭제
+	$('#area1').append("<option value = ''>전체 선택</option>");
+	
+	$.each(contentList, function(){
+		
+
+		if (beforearea != $.trim(this.area1)){		
+			$('#area1').append("<option value = '"+$.trim(this.area1)+"'>"+$.trim(this.area1)+"</option>");
+			beforearea = $.trim(this.area1);
+		}
+	});
+    pageChk(1);
+});
+
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+
+        var x = a[key];
+        var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+function areaSelectedAction(){
+	var contentList = branchList;
+	var areaSelected = $("#area1 option:selected").val(); 
+	var beforedate="";
+	
+	contentList = sortByKey(contentList, 'days');
+
+	$("select[id='area2'] option").remove(); //내역삭제
+	$('#area2').append("<option value = ''>전체 선택</option>");
+
+	$.each(contentList, function(){
+		if (beforedate != this.area2){		
+			if ($.trim(areaSelected) != "" ) {
+				if ($.trim(areaSelected) == this.area1 ){
+						$('#area2').append("<option value = '"+this.area2+"'>"+this.area2+"</option>");
+						beforedate = this.area2;
+				}
+			} else {
+				$('#area2').append("<option value = '"+this.area2+"'>"+this.area2+"</option>");
+				beforedate = this.area2;
+			}
+		}
+	});
+}
+
+var current_data = JSON.parse('<%-JSON.stringify(data)%>')
+
+var branchList = current_data.emitted.fulfill[0][0].info;
+//console.log(branchList)
+
+var pageList = 1; // 페이지 번호
+
+function infoSearch(){
+	$("#type_list_box").val("");
+	
+	var areaSelected = $("#area1 option:selected").val(); 
+	var dateSelected = $("#area2 option:selected").val();
+	var contentList = branchList;
+	
+	contentList = sortByKey(contentList, 'time');
+
+	
+	var innerTopHtml = "<table class='list'>";
+	innerTopHtml += "<colgroup>";
+	innerTopHtml += "				<col width='35%' class='tw_branch' />";
+	innerTopHtml += "				<col class='tw_days' width='35%' />";
+	innerTopHtml += "				<col class='tw_time' width='30%' />";
+	innerTopHtml += "			</colgroup>";
+	innerTopHtml += "<thead>";
+	innerTopHtml += "				<th scope='col'>장소</th>";
+	innerTopHtml += "				<th scope='col'>날짜</th>";
+	innerTopHtml += "				<th scope='col'>시간</th>";
+	innerTopHtml += "			</thead>";
+	innerTopHtml += "<tbody>";
+
+	var innerBodyHtml = "";
+	
+	var innerBottomHtml = "</tbody></table>"
+								
+// list all > display none
+
+	$.each(contentList, function(index){
+
+		var idx = index;
+		if ($.trim(areaSelected) == "" && $.trim(dateSelected) == "")	{//전체검색			
+				innerBodyHtml += "<tr>";
+				innerBodyHtml += "<td class='branch'><span>" + this.branch + "</span></td>";
+				innerBodyHtml += "<td class='days'><span>" + this.days + "</span></td>";
+				innerBodyHtml += "<td class='area'><span>" + this.time + "</span></td>";	
+				innerBodyHtml += "</tr>";
+		}
+		
+		if ($.trim(areaSelected) == "" && $.trim(dateSelected) != ""){//지역검색은 전체검색 날짜는 그냥검색
+			if ($.trim(this.area2) == $.trim(dateSelected)){
+				innerBodyHtml += "<tr>";
+				innerBodyHtml += "<td class='branch'><span>" + this.branch + "</span></td>";
+				innerBodyHtml += "<td class='days'><span>" + this.days + "</span></td>";
+				innerBodyHtml += "<td class='area'><span>" + this.time + "</span></td>";		
+				innerBodyHtml += "</tr>";
+			}
+		}
+		
+		if ($.trim(areaSelected) != "" && $.trim(dateSelected) == ""){//그냥검색은 전체검색 날짜는  지역검색
+			if ($.trim(this.area1) == $.trim(areaSelected)){
+				innerBodyHtml += "<tr>";
+				innerBodyHtml += "<td class='branch'><span>" + this.branch + "</span></td>";
+				innerBodyHtml += "<td class='days'><span>" + this.days + "</span></td>";
+				innerBodyHtml += "<td class='area'><span>" + this.time + "</span></td>";	
+				innerBodyHtml += "</tr>";
+			}
+		}
+		
+		if ($.trim(areaSelected) != "" && $.trim(dateSelected) != ""){//둘다 선택해서 검사 하는경우;
+			if ($.trim(this.area1) == $.trim(areaSelected) && $.trim(this.area2) == $.trim(dateSelected)){ //두개의 조건문이 있는경우
+				innerBodyHtml += "<tr>";
+				innerBodyHtml += "<td class='branch'><span>" + this.branch + "</span></td>";
+				innerBodyHtml += "<td class='days'><span>" + this.days + "</span></td>";
+				innerBodyHtml += "<td class='area'><span>" + this.time + "</span></td>";		
+				innerBodyHtml += "</tr>";
+			}		
+		}
+		
+		$("#type_list_box").html(innerTopHtml + innerBodyHtml + innerBottomHtml);
+	});
+	pageChk(1);
+}
+
+function pageChk(clickIdx){
+
+
+	var len = $(".list tr").length;
+	var pageSize = 5;
+	
+	if(isNaN(clickIdx) == true) { // "prev" 또는 "next"
+		if(clickIdx == "prev" && pageList > 1) { // 이전 버튼 누를 때
+			pageList--;
+		}else if(clickIdx == "next" && pageList < parseInt(len/pageSize)) {
+			pageList++;
+		}else if(clickIdx == "first" )
+		{
+			pageList = 1;
+		}else if (clickIdx == "last")
+		{
+			pageList = parseInt(len/pageSize);
+		}
+		// 다음 버튼 누를 때
+	}else{ // 페이지 번호 누를 때
+		pageList = clickIdx; 
+	}
+
+	$(".list tbody tr").hide();
+	$(".list tbody tr").each(function(index){
+		var idx = index;
+		if(parseInt(idx/pageSize) == (pageList-1)){
+			$(this).show();
+		}	//pageList번호에 해당하는 리스트 보여줌
+	});
+	
+	$("#paging ul").empty();
+	if(parseInt(len/pageSize) > 0){
+		for(var i=0; i<parseInt(len/pageSize); i++){
+			if(i == (pageList-1)){
+
+				$("#paging ul").append('<li class="on"><a href='+'javascript:pageChk('+(i+1)+');'+'>'+(i+1)+'</a></li>');
+			}else {
+				$("#paging ul").append('<li><a href='+'javascript:pageChk('+(i+1)+');'+'>'+(i+1)+'</a></li>');
+			}
+		}
+
+	}else {
+		for(var i=0; i<parseInt(len/pageSize)+1; i++){
+			$("#paging ul").append('<li class="on"><a href='+'javascript:pageChk('+(i+1)+');'+'>'+(i+1)+'</a></li>');
+		}
+	}
+	
+}
+
+</script>

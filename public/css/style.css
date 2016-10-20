@@ -1,0 +1,27 @@
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+* {margin:0; padding:0; font-family:'Nanum Gothic';}
+img {border:none;}
+.promotion {width:817px;}
+.promotion > a {display:block; width:410px; margin:25px auto;}
+.content {width:817px; margin-left:34px;}
+.content > div {position:relative;}
+.content div > img {display:block;}
+.content div .choice fieldset {position:absolute; top:102px; left:108px; border:0;}
+.content div .choice fieldset select {margin-left:93px; vertical-align:top;}
+.content div .choice fieldset  #area1 {margin-left:0;}
+.content div .choice input {background:url(http://www.mcdonalds.co.kr/uploadFolder/promo/20160422/search.gif) 0 0 no-repeat; width:129px; height:25px; margin:-2px 0 0 165px; border:0;}
+.content div #type_list_box {width:749px; height:252px; border:1px solid #d8d8d8; overflow:auto;}
+.content div div table {width:732px; height:auto; text-align:center; border:1px solid #d8d8d8; border-collapse: collapse;}
+.content div div table th {background:#d8d8d8; padding:10px 0; color:#fff; border-right:1px solid #fff; font-size:17px;}
+.content div div table th span {margin-left:45px;}
+.content div div  table td {padding:7px 0; color:#545554; border:1px solid #d8d8d8; font-size:15px; font-weight:600;}	
+
+/*paging*/
+.paging_box {width:748px; padding:30px 0; text-align:center;}
+.paging_box #paging {display:inline-block; margin:0 auto;}
+.paging_box #paging:after{clear:both;display:block;content:'';}
+.paging_box #paging span {float:left; display:inline-block;}
+.paging_box #paging ul {float:left;margin:0;}
+.paging_box #paging ul:after {clear:both; display:block; content:'';}
+.paging_box #paging ul li {float:left;list-style:none;}
+.paging_box #paging a {padding:0 3px;}

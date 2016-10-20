@@ -1,0 +1,608 @@
+<div class="promotion">
+	<div class="content">
+		<p><img src="http://www.mcdonalds.co.kr/uploadFolder/promo/20160422/RonaldsVisit_top.jpg" alt="엄마! 나도 로날드랑 놀래! 아이와 함께 로날드가 준비한 게임과 이벤트를 즐겨보세요! 매장에서 로날드도 만나고 장남감도 무료로 받아가세요!(한정수량)"></p>
+		<div>
+			<img src="http://www.mcdonalds.co.kr/uploadFolder/promo/20160422/RonaldsVisit_select.jpg" alt="로날드 방문매장 및 스케줄 안내">
+			<div class="choice">
+				<fieldset>
+					<legend style="display:none;">검색하기 영역</legend>
+					<select name="area1" id="area1" title="지역선택" onchange="areaSelectedAction();">
+						<option value="">전체</option>
+						<option value="강원도">강원도</option>
+						<option value="경기도">경기도</option>
+						<option value="경상남도">경상남도</option>
+						<option value="경상북도">경상북도</option>
+						<option value="광주광역시">광주광역시</option>
+						<option value="대구광역시">대구광역시</option>
+						<option value="대전광역시">대전광역시</option>
+						<option value="부산광역시">부산광역시</option>
+						<option value="서울특별시">서울특별시</option>
+						<option value="울산광역시">울산광역시</option>
+						<option value="인천광역시">인천광역시</option>
+						<option value="제주특별자치도">제주특별자치도</option>
+						<option value="충청남도">충청남도</option>
+						<option value="충청북도">충청북도</option>
+					</select>
+					<select name="area2" id="area2" title="날짜선택">
+						<option value="">전체</option>
+						<option value="04월 30일">04월 30일</option>
+						<option value="05월 01일">05월 01일</option>
+						<option value="05월 05일">05월 05일</option>
+						<option value="05월 07일">05월 07일</option>
+						<option value="05월 08일">05월 08일</option>
+						<option value="05월 14일">05월 14일</option>
+						<option value="05월 15일">05월 15일</option>
+						<option value="05월 21일">05월 21일</option>
+						<option value="05월 22일">05월 22일</option>
+						<option value="05월 28일">05월 28일</option>
+						<option value="05월 29일">05월 29일</option>
+						<option value="06월 04일">06월 04일</option>
+					</select>
+					<input  class="btn_findpm" onclick="infoSearch();" type="button" name="search"  alt="검색">
+				</fieldset>
+			</div>
+			<div id="type_list_box">
+			 <table class="list" border="1">
+					<caption style="display:none">로날드 방문 매장 및 스케쥴 안내</caption>
+					<colgroup>
+						<col width="35%" class="tw_branch"/>
+						<col width="35%" class="tw_days"/>
+						<col width="*" class="tw_time"/>
+					</colgroup>
+										<thead>
+					<tr>
+						<th scope="row">장<span>소</span></th>
+						<th scope="row">날<span>짜</span></th>
+						<th scope="row">시<span>간</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="branch"><span>원주단구DT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>춘천퇴계DT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>연산SKDT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>토곡</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>12:15 ~ 13:15</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>원동</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>13:40 ~ 14:40</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>부산구서DT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>15:10 ~ 16:10</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>부천역곡역DT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>중동DT</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>홈플러스 상동</span></td>
+						<td class="days"><span>04월 30일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>수원GSDT</span></td>
+						<td class="days"><span>05월 01일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>수원인계DT</span></td>
+						<td class="days"><span>05월 01일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>수원성</span></td>
+						<td class="days"><span>05월 01일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>상계DT</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>중계역</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>12:30 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>한신(세이브존 노원점)</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>13:20 ~ 14:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>중계</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>14:40 ~ 15:40</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구상인DT</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>12:00 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구본리DT</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구이곡DT</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>망원</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>합정 메세나폴리스</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>12:20 ~ 13:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신촌</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>애오개</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>15:30 ~ 16:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>공덕</span></td>
+						<td class="days"><span>05월 05일</span></td>
+						<td class="time"><span>16:50 ~ 17:50</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>탄현</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>중산DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>행신</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>14:10 ~ 15:10</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>화정점</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>15:30 ~ 16:30</span></td>
+					</tr><tr>
+						<td class="branch"><span>정발산</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>17:00 ~ 18:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구침산DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>12:00 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구태전DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>구미인동DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>15:30 ~ 16:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>양천구청DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신월DT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>12:40 ~ 13:40</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신월SKDT</span></td>
+						<td class="days"><span>05월 07일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>진접DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>평내DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>13:00 ~ 14:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>덕소</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구수성DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>12:00 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구시지DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>13:45 ~ 14:45</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대전가장DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>12:00 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>청주분평DT</span></td>
+						<td class="days"><span>05월 08일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신도림테크노</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신도림디큐브</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>12:15 ~ 13:15</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>서울대역</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신림</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>15:30 ~ 16:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>대구진천DT</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>광주진월DT</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>석촌역</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>신천</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>강남뉴코아</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>14:20 ~ 15:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>한티</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>16:00 ~ 17:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>송파잠실DT</span></td>
+						<td class="days"><span>05월 14일</span></td>
+						<td class="time"><span>17:30 ~ 18:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>쌍문 DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>수유</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>12:30 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>미아리</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>종암SK</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>울산삼산DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>울산삼산로DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>12:20 ~ 13:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>울산옥현</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>울산굴화DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>15:30 ~ 16:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>평택SK</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>오산DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>13:00 ~ 14:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>그랜드마트 영통</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>수원망포DT</span></td>
+						<td class="days"><span>05월 15일</span></td>
+						<td class="time"><span>16:30 ~ 17:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>용인수지DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>용인마북DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>제주서귀포DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>제주일도DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>제주시청DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>14:50 ~ 15:50</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>제주노형</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>16:20 ~ 17:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>제주공항DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>17:40 ~ 18:40</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>성남신흥DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>야탑뉴코아</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>분당효자</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>13:50 ~ 14:50</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>용인동백DT</span></td>
+						<td class="days"><span>05월 21일</span></td>
+						<td class="time"><span>15:50 ~ 16:50</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>서울등촌DT</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>염창DT</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>파리공원</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>부산덕천DT</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>화명동</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>둔촌DT</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>굽은다리역DT</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>암사역</span></td>
+						<td class="days"><span>05월 22일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>천안두정DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>12:00 ~ 13:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>서산DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>거제</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>진해자은DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>서울시흥DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>광명DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>13:00 ~ 14:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>고척DT</span></td>
+						<td class="days"><span>05월 28일</span></td>
+						<td class="time"><span>15:00 ~ 16:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>과천뉴코아</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>평촌호계</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>12:40 ~ 13:40</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>안양비산SKDT</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>범일SKDT</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>부산다대DT</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>인천만수DT</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>부평역</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>인천부평SKDT</span></td>
+						<td class="days"><span>05월 29일</span></td>
+						<td class="time"><span>14:00 ~ 15:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>김포장기DT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>인천연희 DT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>13:30 ~ 14:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>인천삼산DT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>15:20 ~ 16:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>인천구월DT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>17:20 ~ 18:20</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>의왕오전DT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>11:00 ~ 12:00</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>군포당동SKDT</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>12:30 ~ 13:30</span></td>
+					</tr>
+					<tr>
+						<td class="branch"><span>시흥은행</span></td>
+						<td class="days"><span>06월 04일</span></td>
+						<td class="time"><span>14:30 ~ 15:30</span></td>
+					</tr>
+				</tbody>
+
+				</table>
+			</div>				
+			<div class="paging_box">
+				<div id="paging">
+					<span class="on"><a href=javascript:pageChk("first");>처음</a></span>
+					<span class="on"><a href=javascript:pageChk("prev");>PREV</a></span>
+						<ul>
+
+						</ul>
+					<span class="on"><a href=javascript:pageChk("next");>NEXT</a></span>
+					<span class="on"><a href=javascript:pageChk("last");>맨끝</a></span>
+				</div>						
+			</div>			
+		</div>
+	</div>
+	<a href="http://www.mcdonalds.co.kr/www/kor/findus/district.do"><img src="http://www.mcdonalds.co.kr/uploadFolder/promo/20160422/RonaldsVisit_btn.jpg" alt="가까운 매장 찾기"></a>
+	<p><img src="http://www.mcdonalds.co.kr/uploadFolder/promo/20160422/RonaldsVisit_bottom.jpg" alt="매장은 변경될 수 있으며, 변경시 1일전에 공지됩니다. 방문행사는 매장당 한시간 동안 진행되며, 시간은 공지된 시간에서 상황에 따라 약간의 차이가 있을 수 있습니다."></p>
+</div>
